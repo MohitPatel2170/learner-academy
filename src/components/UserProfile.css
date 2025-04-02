@@ -1,0 +1,125 @@
+/* UserProfile.css */
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .profile-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-content {
+    width: 100%;
+  }
+  
+  .dashboard-section {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .course-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-card h4 {
+    margin-bottom: 0.5rem;
+  }
+  
+  button {
+    background: #0073e6;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #005bb5;
+  }
+  
+  .progress-summary {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  
+  .progress-stat {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0073e6;
+  }
+  
+  .stat-label {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-container {
+      padding: 1rem;
+    }
+    .course-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .progress-summary {
+      flex-direction: column;
+      align-items: center;
+    }
+    .progress-stat {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .profile-container {
+      padding: 0.5rem;
+    }
+    .dashboard-section {
+      padding: 1rem;
+    }
+    .course-card {
+      max-width: 100%;
+    }
+    .progress-stat {
+      width: 100%;
+    }
+  }
+  

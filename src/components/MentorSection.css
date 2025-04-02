@@ -1,0 +1,87 @@
+/* src/components/MentorSection.css */
+
+.teacher-profile-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .teacher-profile-header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .teacher-profile-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .offered-courses-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .offered-courses-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .courses-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .course-card {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+  }
+  
+  .course-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .teacher-profile-container {
+      padding: 15px;
+    }
+  
+    .courses-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .course-card {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .teacher-profile-header, .teacher-profile-content {
+      padding: 15px;
+    }
+  
+    .offered-courses-btn {
+      width: 100%;
+    }
+  }
+  

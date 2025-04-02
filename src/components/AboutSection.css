@@ -1,0 +1,57 @@
+
+  .why-khan-academy {
+    text-align: center; /* Centers text */
+    padding: 20px 20px;
+    background-color: #f4f4f4;
+    color: #21242C;
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers items */
+    gap: 20px; /* Space between cards */
+  }
+  
+  .feature {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+
+  }
+
+  .feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #eaf6ff; /* Light blue on hover */
+  }
+  
+  
+  .feature img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) { /* Tablets */
+    .features {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) { /* Mobile */
+    .features {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

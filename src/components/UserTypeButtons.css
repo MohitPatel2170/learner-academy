@@ -1,0 +1,62 @@
+.user-type-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .user-type-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #0a2a66;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .user-type-button {
+    background-color: white;
+    border: 2px solid #e0e1e2;
+    border-radius: 8px;
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .user-type-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-color: #1865f2;
+  }
+  
+  .button-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .user-type-button h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #0a2a66;
+  }
+  
+  .user-type-button p {
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .button-container {
+      flex-direction: column;
+    }
+    
+    .user-type-button {
+      margin-bottom: 20px;
+    }
+  }
