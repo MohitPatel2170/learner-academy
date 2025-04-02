@@ -14,7 +14,7 @@ const Hero = () => {
           <p>
             We're a nonprofit with the mission to provide a free, world-class education for anyone, anywhere.
           </p>
-          <button className="hero-button" onClick={() =>navigate ('/courses')}>Start learning now</button>
+          <button className="hero-button" onClick={() =>navigate ('/Courses')}>Start learning now</button>
         </div>
         <div className="hero-image-container">
           <img src={heroImage} alt="Students learning" className="hero-image" />

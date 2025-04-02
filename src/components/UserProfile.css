@@ -1,125 +1,596 @@
 /* UserProfile.css */
-
-.profile-container {
+:root {
+    --primary-color: #4f46e5;
+    --primary-light: #e0e7ff;
+    --secondary-color: #10b981;
+    --accent-color: #f59e0b;
+    --text-dark: #1f2937;
+    --text-medium: #6b7280;
+    --text-light: #9ca3af;
+    --bg-light: #f9fafb;
+    --bg-white: #ffffff;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    --border-color: #e5e7eb;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-light);
+    padding: 1rem;
+  }
+  
+  /* Sidebar styles */
+  .profile-sidebar {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .user-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .profile-header {
-    text-align: center;
     margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
   }
   
-  .profile-content {
-    width: 100%;
-  }
-  
-  .dashboard-section {
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .course-cards {
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    align-items: center;
     justify-content: center;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
   }
   
-  .course-card {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 350px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .user-info h2 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+    color: var(--text-dark);
   }
   
-  .course-card h4 {
+  .user-role {
+    color: var(--text-medium);
+    font-size: 0.875rem;
     margin-bottom: 0.5rem;
   }
   
-  button {
-    background: #0073e6;
+  .membership-badge {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .profile-nav {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+  
+  .nav-btn {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: none;
+    background: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 0.25rem;
+  }
+  
+  .nav-btn:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+  }
+  
+  .nav-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+  }
+  
+  .study-stats {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .study-stats h3 {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+  }
+  
+  .stats-item {
+    margin-bottom: 1rem;
+  }
+  
+  .stats-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-medium);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stats-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: var(--border-radius-sm);
+    margin: 0.5rem 0;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .progress-text {
+    font-size: 0.75rem;
+    color: var(--text-medium);
+  }
+  
+  /* Main content styles */
+  .profile-main {
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .greeting-section h1 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+  }
+  
+  .greeting-section p {
+    color: var(--text-medium);
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .notification-btn, .settings-btn {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+  }
+  
+  .notification-btn:hover, .settings-btn:hover {
+    background-color: var(--primary-light);
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.75rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Quick actions */
+  .quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .action-btn {
+    padding: 1rem;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .action-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  /* Daily goal */
+  .daily-goal {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .goal-progress {
+    width: 120px;
+    height: 120px;
+    margin: 1rem auto;
+    position: relative;
+  }
+  
+  .progress-ring {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .progress-ring-bg {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-width: 8;
+  }
+  
+  .progress-ring-circle {
+    fill: none;
+    stroke: var(--secondary-color);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+  
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .progress-percentage {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+  
+  /* Recent activity */
+  .recent-activity {
+    margin-bottom: 2rem;
+  }
+  
+  .activity-timeline {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .activity-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    width: 2px;
+    background-color: var(--border-color);
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding-bottom: 1.5rem;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    left: -1.5rem;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 2px solid white;
+  }
+  
+  .timeline-content {
+    margin: 0;
+    color: var(--text-dark);
+  }
+  
+  .timeline-time {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+  }
+  
+  /* Section headers */
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .section-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+  }
+  
+  .view-all-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  
+  /* Course cards */
+  .course-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .course-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .course-info h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+  }
+  
+  .course-category {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 0.75rem;
+  }
+  
+  .course-progress-bar {
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 0.5rem;
+  }
+  
+  .progress-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-medium);
+    margin-bottom: 1rem;
+  }
+  
+  .continue-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.2s ease;
+  }
+  
+  .continue-btn:hover {
+    background-color: #3730a3;
+  }
+  
+  /* Recommended courses */
+  .recommended-courses {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .recommended-card {
+    display: flex;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+  }
+  
+  .course-thumbnail {
+    width: 100px;
+    background-color: var(--primary-light);
+    flex-shrink: 0;
+  }
+  
+  .recommended-info {
+    padding: 1rem;
+    flex-grow: 1;
+  }
+  
+  .recommended-info h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+  }
+  
+  .course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .course-meta span {
+    font-size: 0.75rem;
+    color: var(--text-medium);
+  }
+  
+  .course-rating {
+    color: var(--accent-color);
+  }
+  
+  .enroll-btn {
+    background-color: var(--secondary-color);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.2s ease;
   }
   
-  button:hover {
-    background: #005bb5;
+  .enroll-btn:hover {
+    background-color: #059669;
   }
   
-  .progress-summary {
+  /* Courses tab */
+  .filter-options {
     display: flex;
-    justify-content: space-around;
-    text-align: center;
     flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
   }
   
-  .progress-stat {
-    background: white;
+  .filter-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-md);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .filter-btn:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  .filter-btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+  }
+  
+  .expanded-course-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  
+  .expanded-course-info {
     padding: 1rem;
-    border-radius: 8px;
-    min-width: 100px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .stat-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #0073e6;
+  .expanded-course-info h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
   }
   
-  .stat-label {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #666;
+  .progress-section {
+    margin: 1rem 0;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .profile-container {
-      padding: 1rem;
-    }
-    .course-cards {
-      flex-direction: column;
-      align-items: center;
-    }
-    .progress-summary {
-      flex-direction: column;
-      align-items: center;
-    }
-    .progress-stat {
-      width: 80%;
-      margin-bottom: 1rem;
-    }
+  .course-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 1rem 1rem;
   }
   
-  @media (max-width: 480px) {
-    .profile-container {
-      padding: 0.5rem;
-    }
-    .dashboard-section {
-      padding: 1rem;
-    }
-    .course-card {
-      max-width: 100%;
-    }
-    .progress-stat {
-      width: 100%;
-    }
+  .primary-btn, .secondary-btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
+  
+  .primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+  }
+  
+  .primary-btn:hover {
+    background-color: #3730a3;
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+  }
+  
+  .secondary-btn:hover {
+    background-color: var(--primary-light);
+  }
+  
+  /* Achievements tab */
+  .stats-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  
   

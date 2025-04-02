@@ -7,7 +7,7 @@
   .user-type-section h2 {
     font-size: 2rem;
     margin-bottom: 40px;
-    color: #0a2a66;
+    color: #072258;
   }
   
   .button-container {
@@ -20,7 +20,7 @@
   
   .user-type-button {
     background-color: white;
-    border: 2px solid #e0e1e2;
+    border: 2px solid #b3c4d6;
     border-radius: 8px;
     padding: 30px;
     flex: 1;
@@ -33,7 +33,7 @@
   .user-type-button:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    border-color: #1865f2;
+    border-color: #71757d;
   }
   
   .button-icon {
@@ -44,7 +44,7 @@
   .user-type-button h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #0a2a66;
+    color: #000000;
   }
   
   .user-type-button p {

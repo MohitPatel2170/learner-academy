@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
+import Course from './components/Courses';
 import CourseSection from './components/CourseSection';
+import Footer from './components/Footer';
 import MentorProfile from './components/MentorSection';
 import Navbar from './components/Navbar';
 import UserProfile from './components/UserProfile';
@@ -47,8 +49,10 @@ function App() {
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/course" element={<CourseSection />} />
         <Route path="/mentorSection" element={<MentorProfile />} />
+        <Route path="/courses" element={<Course />} />
 
       </Routes>
+     <Footer/>
       </main>
     </div>
   </Router>
