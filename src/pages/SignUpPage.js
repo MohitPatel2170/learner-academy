@@ -125,7 +125,7 @@ const SignUpPage = () => {
             </div>
           </div>
           
-          <button type="submit" className="auth-button">Sign up</button>
+          <button type="submit" className="auth-button">Try for free</button>
         </form>
         
         <p className="auth-redirect">

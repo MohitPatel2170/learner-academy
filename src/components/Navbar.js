@@ -97,7 +97,7 @@ const Navbar = () => {
           ) : (
             <div className="auth-links desktop-auth">
               <Link to="/login" className="login-button">Log in</Link>
-              <Link to="/signup" className="signup-button">Sign up</Link>
+              <Link to="/signup" className="signup-button">Try for free</Link>
             </div>
           )}
         </div>
@@ -132,7 +132,7 @@ const Navbar = () => {
           )}
           <div className="mobile-nav-links">
             <Link to="/" className="mobile-nav-link" onClick={toggleMenu}>Home</Link>
-            <Link to="/Courses" className="mobile-nav-link" onClick={toggleMenu}>Courses</Link>
+            <Link to="/courses" className="mobile-nav-link" onClick={toggleMenu}>Courses</Link>
             <Link to="/profile" className="mobile-nav-link" onClick={toggleMenu}>My profile</Link>
             <Link to="/about" className="mobile-nav-link" onClick={toggleMenu}>About</Link>
           </div>

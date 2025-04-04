@@ -1,58 +1,190 @@
-.hero-section {
-    padding: 60px 20px;
-    background-color: #f6f7f8;
-  }
-  
-  .hero-content {
+.hero-container {
     display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    padding: 2rem 4rem;
+    background-color: white;
+    min-height: 500px;
+    gap: 2rem;
+    font-family: 'Arial', sans-serif;
   }
   
-  .hero-text {
+  /* Left Box Styles */
+  .hero-box {
     flex: 1;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
   }
   
-  .hero-text h1 {
+  .user-input-box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 480px;
+  }
+  
+  .hero-title {
     font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #0a2a66;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #3c4852;
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: #3c4852;
+    margin-bottom: 1.5rem;
   }
   
-  .hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #4c4c4c;
+  .highlight-text {
+    color: #08bd80;
+    font-weight: 600;
   }
   
-  .hero-button {
-    background-color: #1865f2;
+  .phone-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .phone-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .input-container {
+    position: relative;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    display: flex;
+    border: 2px solid #e0e6eb;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .input-container:focus-within {
+    border-color:#3c4852 ;
+  }
+  .country-code {
+    display: flex;
+    align-items: center;
+    padding: 0 0.8rem;
+    background-color: white;
+    border-right: 1px solid #e0e6eb;
+    gap: 0.3rem;
+  }
+  .flag-icon {
+    width: 24px;
+    height: 16px;
+  }
+  .dropdown-arrow {
+    font-size: 0.6rem;
+    color: #666;
+    margin-left: 0.3rem;
+  }
+  
+  .phone-input {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    color: #3c4852;
+
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  .phone-input::placeholder {
+    color: #98a0a6;
+  }
+  .otp-text {
+    color: #98a0a6; /* Matched color with placeholder */
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem; /* Increased space before button */
+  }
+  
+  .phone-input:focus {
+    border: 1px solid #08bd80;
+  }
+  
+  .start-free-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #3c4852;
     color: white;
     border: none;
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-  
-  .hero-image-container {
-    flex: 1;
-  }
-  
-  .hero-image {
-    width: 100%;
-    max-width: 500px;
     border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
-  @media (max-width: 900px) {
-    .hero-content {
+  .start-free-button:hover {
+    background-color: #2d373e;
+  }
+  
+  /* Right Box / Slider Styles */
+  .slider-box {
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+  }
+  
+  .slider-container {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    position: relative;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.8s ease;
+    transform:scale(0.9) translateX(100%);
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transform:  scale(1) translateX(0);
+    z-index: 1;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .hero-container {
       flex-direction: column;
+      padding: 2rem;
     }
     
-    .hero-text, .hero-image-container {
-      text-align: center;
+    .hero-box {
+      width: 100%;
+      margin-bottom: 2rem;
     }
+    
+    .hero-title {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 1.8rem;
+    }
+    .user-input-box {
+        max-width: 100%;
+      }
   }

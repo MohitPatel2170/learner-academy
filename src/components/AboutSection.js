@@ -19,8 +19,8 @@ const AboutSection = () => {
         },
         {
           img: "https://cdn.kastatic.org/images/lohp/empower_teachers_icon.png",
-          alt: "Tools to empower teachers",
-          title: "Tools to empower teachers",
+          alt: "Tools to empower.",
+          title: "Tools to empower",
           description:
             "With Khan Academy, teachers can identify gaps in their students’ understanding, tailor instruction, and meet the needs of every student."
         }
@@ -29,7 +29,7 @@ const AboutSection = () => {
 
     return (
         <section className="why-khan-academy">
-          <h1>Why Khan Academy works</h1>
+          <h1>Why learner Academy works</h1>
           <div className="features">
             {features.map((feature, index) => (
               <div className="feature" key={index}>

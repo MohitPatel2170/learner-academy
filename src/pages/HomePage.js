@@ -3,6 +3,8 @@ import AboutSection from '../components/AboutSection';
 import Courses from '../components/Courses';
 import CourseSection from '../components/CourseSection';
 import Hero from '../components/Hero';
+import Information from '../components/Information';
+import LearnerPlatform from '../components/LearnerPlatform';
 import UserTypeButtons from '../components/UserTypeButtons';
 import './HomePage.css';
 
@@ -12,8 +14,12 @@ const HomePage = () => {
       <Hero />
       <UserTypeButtons />
       <Courses/>
-      <CourseSection />
+      <LearnerPlatform />
+      
+      
       <AboutSection />
+      <Information />
+      <CourseSection />
     
     </div>
   );
